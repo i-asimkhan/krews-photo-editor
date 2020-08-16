@@ -1,0 +1,6 @@
+framework module KrewsPhotoEditor {
+  umbrella header "KrewsPhotoEditor-umbrella.h"
+
+  export *
+  module * { export * }
+}

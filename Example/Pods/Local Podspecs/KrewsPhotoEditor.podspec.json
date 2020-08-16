@@ -1,0 +1,22 @@
+{
+  "name": "KrewsPhotoEditor",
+  "version": "0.1.0",
+  "summary": "A short description of KrewsPhotoEditor.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "iamasimkhanjadoon@gmail.com": "asim2125Khan"
+  },
+  "source": {
+    "git": "https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "KrewsPhotoEditor/Classes/**/*"
+}
