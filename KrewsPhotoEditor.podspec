@@ -9,7 +9,8 @@
 Pod::Spec.new do |s|
   s.name             = 'KrewsPhotoEditor'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KrewsPhotoEditor.'
+  s.summary          = 'KrewsPhotoEditor is a customised photo editor.'
+  s.social_media_url = 'https://twitter.com/i_am_asimkhan'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,19 +25,21 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'iamasimkhanjadoon@gmail.com' => 'asim2125Khan' }
+  s.author           = { 'develoepr shanghai'  =>  'iamasimkhanjadoon@gmail.com' }
   s.source           = { :git => 'https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'KrewsPhotoEditor/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'KrewsPhotoEditor' => ['KrewsPhotoEditor/Assets/*.png']
-  # }
+  s.source_files = 'KrewsPhotoEditor/Source/**/*'
+  s.resource_bundles = {
+     'KrewsPhotoEditor' => ['KrewsPhotoEditor/Resources/*.png']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Quick', '~> 1.2.0'
+  s.dependency 'Nimble', '~> 7.0'
+  s.dependency 'FBSnapshotTestCase', '~> 2.1.4'
+  s.dependency 'Nimble-Snapshots', '~> 6.3.0'
+
 end
