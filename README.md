@@ -22,7 +22,7 @@ pod 'KrewsPhotoEditor'
 
 ## Author
 
-iamasimkhanjadoon@gmail.com, asim2125Khan
+iamasimkhanjadoon@gmail.com.
 
 ## License
 
