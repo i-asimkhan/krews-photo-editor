@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KrewsPhotoEditor'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'KrewsPhotoEditor is a customised photo editor.'
   s.social_media_url = 'https://twitter.com/i_am_asimkhan'
 
@@ -18,28 +18,25 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'KrewsPhotoEditor is a customised photo editor. This will allow users to edit images with beutiful layout.'
 
-  s.homepage         = 'https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor'
+  s.homepage         = 'https://github.com/dev-shanghai/KrewsPhotoEditor.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'develoepr shanghai'  =>  'iamasimkhanjadoon@gmail.com' }
-  s.source           = { :git => 'https://github.com/iamasimkhanjadoon@gmail.com/KrewsPhotoEditor.git', :tag => s.version.to_s }
+  s.author           = { 'dev-shanghai'  =>  'iamasimkhanjadoon@gmail.com' }
+  s.source           = { :git => 'https://github.com/dev-shanghai/KrewsPhotoEditor.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
+  s.swift_versions = '5.0'
 
-  s.source_files = 'KrewsPhotoEditor/Source/**/*'
-  s.resource_bundles = {
-     'KrewsPhotoEditor' => ['KrewsPhotoEditor/Resources/*.png']
-   }
+  s.source_files = "Source/**/*.{swift}"
+  s.resources = "Source/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  s.dependency 'Quick', '~> 1.2.0'
-  s.dependency 'Nimble', '~> 7.0'
-  s.dependency 'FBSnapshotTestCase', '~> 2.1.4'
-  s.dependency 'Nimble-Snapshots', '~> 6.3.0'
+    # s.public_header_files = 'Pod/Classes/**/*.h'
+    # s.frameworks = 'UIKit', 'MapKit'
+    #  s.dependency 'Quick', '~> 1.2.0'
+    #  s.dependency 'Nimble', '~> 7.0'
+    #  s.dependency 'FBSnapshotTestCase', '~> 2.1.4'
+    #  s.dependency 'Nimble-Snapshots', '~> 6.3.0'
 
 end
