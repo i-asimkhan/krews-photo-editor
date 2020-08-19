@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KrewsPhotoEditor'
-  s.version          = '0.1.2'
+  s.version          = '0.2.0'
   s.summary          = 'KrewsPhotoEditor is a customised photo editor.'
   s.social_media_url = 'https://twitter.com/i_am_asimkhan'
 
