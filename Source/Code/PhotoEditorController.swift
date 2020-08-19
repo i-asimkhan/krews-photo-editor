@@ -1,10 +1,23 @@
-//
-//  ViewController.swift
-//  Photo Editor
-//
-//  Created by Mohamed Hamed on 4/23/17.
-//  Copyright © 2017 Mohamed Hamed. All rights reserved.
-//
+///**
+
+/**
+KrewsPhotoEditor
+Created by: Ahmed Alqubaisi on 20/08/2020
+
+PhotoEditorController
+
+
+
+Copyright (c) 2020   Dev Shanghai
+
++-----------------------------------------------------+
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
++-----------------------------------------------------+
+
+*/
 
 import UIKit
 import AVFoundation
@@ -27,7 +40,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var topToolbar: UIView!
     @IBOutlet weak var topRightToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
-
+    
     // Gradient views
     @IBOutlet weak var topGradientView: GradientView!
     @IBOutlet weak var bottomGradient: GradientView!
@@ -42,14 +55,16 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
     
     // Controls
-    @IBOutlet weak var cropButton: UIButton!
-    @IBOutlet weak var stickerButton: UIButton!
-    @IBOutlet weak var drawButton: UIButton!
-    @IBOutlet weak var textButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var clearButton: UIButton!
-    @IBOutlet weak var btnChangeFont: UIButton!
+    @IBOutlet weak var cropBtn: UIButton!
+    @IBOutlet weak var stickerBtn: UIButton!
+    @IBOutlet weak var drawBtn: UIButton!
+    @IBOutlet weak var textBtn: UIButton!
+    @IBOutlet weak var stackBtn: UIButton!
+    @IBOutlet weak var fontChangeBtn: UIButton!
+    @IBOutlet weak var clearBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var shareBtn: UIButton!
+    
     
     //Video Container
     @IBOutlet weak var videoContainerView: UIView!
@@ -98,7 +113,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     
     var stickersViewController: StickersViewController!
-
+    
     // Register Custom font before we load XIB
     public override func loadView() {
         //registerFont()

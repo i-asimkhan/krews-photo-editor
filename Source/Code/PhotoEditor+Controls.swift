@@ -36,7 +36,7 @@ extension PhotoEditorViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func cropButtonTapped(_ sender: UIButton) {
+    @IBAction func cropBtnTapped(_ sender: UIButton) {
         
         //let controller = PhotCropViewController(nibName: "PhotCropViewController", bundle: nil)
         let controller = CropViewController()
@@ -73,7 +73,7 @@ extension PhotoEditorViewController {
         sender.isSelected = !sender.isSelected
     }
 
-    @IBAction func drawButtonTapped(_ sender: Any) {
+    @IBAction func drawBtnTapped(_ sender: Any) {
         isDrawing = true
         canvasImageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
@@ -155,24 +155,24 @@ extension PhotoEditorViewController {
         canvasImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
-        clearButtonTapped(self)
+        clearBtnTapped(self)
         showAndHideFontSelector()
     }
     
     
     //MARK: Bottom Toolbar
     
-    @IBAction func saveButtonTapped(_ sender: AnyObject) {
+    @IBAction func saveBtnTapped(_ sender: AnyObject) {
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(PhotoEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
     }
     
-    @IBAction func shareButtonTapped(_ sender: UIButton) {
+    @IBAction func shareBtnTapped(_ sender: UIButton) {
         let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
         present(activity, animated: true, completion: nil)
         
     }
     
-    @IBAction func clearButtonTapped(_ sender: AnyObject) {
+    @IBAction func clearBtnTapped(_ sender: AnyObject) {
         //clear drawing
         canvasImageView.image = nil
         //clear stickers and textviews
@@ -202,28 +202,28 @@ extension PhotoEditorViewController {
             switch control {
                 
             case .clear:
-                clearButton.isHidden = true
+                clearBtn.isHidden = true
             case .crop:
-                cropButton.isHidden = true
+                cropBtn.isHidden = true
             case .draw:
-                drawButton.isHidden = true
+                drawBtn.isHidden = true
             case .save:
-                saveButton.isHidden = true
+                saveBtn.isHidden = true
             case .share:
-                shareButton.isHidden = true
+                shareBtn.isHidden = true
             case .sticker:
-                stickerButton.isHidden = true
+                stickerBtn.isHidden = true
             case .text:
-                stickerButton.isHidden = true
+                stickerBtn.isHidden = true
             }
         }
     }
     
     func showAndHideFontSelector() {
-        self.btnChangeFont.isHidden = true
+        self.fontChangeBtn.isHidden = true
         self.canvasImageView.subviews.forEach { (view) in
             if view is UITextView {
-                self.btnChangeFont.isHidden = false
+                self.fontChangeBtn.isHidden = false
             }
         }
     }
@@ -254,16 +254,16 @@ extension PhotoEditorViewController {
                 
                 if txtView.font?.fontName == "Helvetica" {
                      txtView.font = UIFont(name: "GillSans", size: 30)
-                    self.btnChangeFont.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
+                    self.fontChangeBtn.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
                 } else if txtView.font?.fontName == "GillSans" {
                      txtView.font = UIFont(name: "AppleColorEmoji", size: 30)
-                    self.btnChangeFont.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
+                    self.fontChangeBtn.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
                 } else if txtView.font?.fontName == "AppleColorEmoji" {
                      txtView.font = UIFont(name: "Helvetica", size: 30)
-                    self.btnChangeFont.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
+                    self.fontChangeBtn.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
                 } else {
                    txtView.font = UIFont(name: "Helvetica", size: 30)
-                    self.btnChangeFont.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
+                    self.fontChangeBtn.titleLabel?.font = UIFont(name: "Gill Sans", size: 25)
                 }
                 
             }

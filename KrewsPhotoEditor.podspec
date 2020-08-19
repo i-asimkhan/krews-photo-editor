@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KrewsPhotoEditor'
-  s.version          = '0.2.1'
+  s.version          = '0.2.2'
   s.summary          = 'KrewsPhotoEditor is a customised photo editor.'
   s.social_media_url = 'https://twitter.com/i_am_asimkhan'
 
@@ -19,7 +19,6 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = 'KrewsPhotoEditor is a customised photo editor. This will allow users to edit images with beutiful layout.'
-
   s.homepage         = 'https://github.com/dev-shanghai/KrewsPhotoEditor.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
