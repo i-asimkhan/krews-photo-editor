@@ -20,6 +20,13 @@ public enum control {
     case clear
 }
 
+struct COLORS {
+
+    static let color1 : UIColor = UIColor(red: 46/255, green: 104/255, blue: 135/255, alpha: 1)
+    static let color2 : UIColor = UIColor(red: 79/255, green: 174/255, blue: 174/255, alpha: 1)
+    static let color3 : UIColor = UIColor(red: 92/255, green: 166/255, blue: 197/255, alpha: 1)
+}
+
 extension PhotoEditorViewController {
 
      //MARK: Top Toolbar
@@ -42,11 +49,35 @@ extension PhotoEditorViewController {
     @IBAction func stickersButtonTapped(_ sender: Any) {
         addStickersViewController()
     }
+    
+    @IBAction func stackButtonPressed(_ sender: UIButton) {
+        
+        if sender.isSelected {
+            self.shadeColorBtn1.isHidden = true
+            self.shadeColorBtn2.isHidden = true
+            self.shadeColorBtn3.isHidden = true
+            
+            self.imageView.image = self.image ?? UIImage()
+            self.imgShadeView.isHidden = true
+        } else {
+            
+            self.shadeColorBtn1.isHidden = false
+            self.shadeColorBtn2.isHidden = false
+            self.shadeColorBtn3.isHidden = false
+            
+            self.imageView.setImageColor(color: COLORS.color1.withAlphaComponent(0.75))
+            self.imgShadeView.isHidden = true
+            self.shadeColorBtn1.isSelected = true
+        }
+        
+        sender.isSelected = !sender.isSelected
+    }
 
     @IBAction func drawButtonTapped(_ sender: Any) {
         isDrawing = true
         canvasImageView.isUserInteractionEnabled = false
         doneButton.isHidden = false
+        cancelButton.isHidden = false
         colorPickerView.isHidden = false
         hideToolbar(hide: true)
     }
@@ -75,11 +106,25 @@ extension PhotoEditorViewController {
     @IBAction func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
         doneButton.isHidden = true
+        cancelButton.isHidden = true
         colorPickerView.isHidden = true
         canvasImageView.isUserInteractionEnabled = true
         hideToolbar(hide: false)
         isDrawing = false
     }
+    
+    @IBAction func editScreencancelButtonTapped(_ sender: UIButton) {
+        
+        cancelButton.isHidden = true
+        view.endEditing(true)
+        doneButton.isHidden = true
+        colorPickerView.isHidden = true
+        canvasImageView.isUserInteractionEnabled = true
+        hideToolbar(hide: false)
+        isDrawing = false
+        clearButtonTapped(self)
+    }
+    
     
     //MARK: Bottom Toolbar
     
@@ -107,8 +152,8 @@ extension PhotoEditorViewController {
         photoEditorDelegate?.doneEditing(image: img)
         self.dismiss(animated: true, completion: nil)
     }
-
-    //MAKR: helper methods
+    
+    // MARK: - helper methods
     
     @objc func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
         let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertController.Style.alert)
@@ -138,4 +183,22 @@ extension PhotoEditorViewController {
         }
     }
     
+}
+
+
+
+// MARK: - Shade View
+extension PhotoEditorViewController {
+    
+    @IBAction func didTapColor1(_ sender: UIButton) {
+        self.imageView.setImageColor(color: COLORS.color1.withAlphaComponent(0.75))
+    }
+    
+    @IBAction func didTapColor2(_ sender: UIButton) {
+        self.imageView.setImageColor(color: COLORS.color2.withAlphaComponent(0.75))
+    }
+    
+    @IBAction func didTapColor3(_ sender: UIButton) {
+        self.imageView.setImageColor(color: COLORS.color3.withAlphaComponent(0.75))
+    }
 }

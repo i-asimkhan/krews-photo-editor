@@ -213,6 +213,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = N3MR28TKLZ;
 						LastSwiftMigration = 1160;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -509,6 +510,7 @@
 			baseConfigurationReference = 4EBFCF23F4504CCACE97FED5 /* Pods-KrewsPhotoEditor_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N3MR28TKLZ;
 				INFOPLIST_FILE = KrewsPhotoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -525,6 +527,7 @@
 			baseConfigurationReference = C78F6CA14BFC5F02C625B07D /* Pods-KrewsPhotoEditor_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N3MR28TKLZ;
 				INFOPLIST_FILE = KrewsPhotoEditor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

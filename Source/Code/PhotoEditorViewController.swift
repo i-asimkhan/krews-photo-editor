@@ -21,16 +21,20 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     // To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
+    
     // Toolbar view
     @IBOutlet weak var topToolbar: UIView!
+    @IBOutlet weak var topRightToolbar: UIView!
     @IBOutlet weak var bottomToolbar: UIView!
 
     // Gradient views
-    @IBOutlet weak var topGradient: UIView!
-    @IBOutlet weak var bottomGradient: UIView!
+    @IBOutlet weak var topGradientView: GradientView!
+    @IBOutlet weak var bottomGradient: GradientView!
+    
     
     // Done, Delete and other Views
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var colorPickerView: UIView!
@@ -49,6 +53,13 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var videoContainerView: UIView!
     @IBOutlet weak var avPlayerView: UIView!
     @IBOutlet weak var videoThumbnailImageView: UIImageView!
+    
+    // Shade image view
+    @IBOutlet weak var imgShadeView: UIView!
+    @IBOutlet weak var shadeColorBtn1: UIButton!
+    @IBOutlet weak var shadeColorBtn2: UIButton!
+    @IBOutlet weak var shadeColorBtn3: UIButton!
+    
     
     
     
@@ -86,9 +97,10 @@ public final class PhotoEditorViewController: UIViewController {
     
     var stickersViewController: StickersViewController!
 
-    //Register Custom font before we load XIB
+    // Register Custom font before we load XIB
     public override func loadView() {
-        registerFont()
+        //registerFont()
+        registerFonts()
         super.loadView()
     }
     
@@ -159,8 +171,9 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func hideToolbar(hide: Bool) {
+        topRightToolbar.isHidden = hide
         topToolbar.isHidden = hide
-        topGradient.isHidden = hide
+        topGradientView.isHidden = hide
         bottomToolbar.isHidden = hide
         bottomGradient.isHidden = hide
     }
