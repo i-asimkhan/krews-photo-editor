@@ -20,6 +20,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
+        self.btnChangeFont.isHidden = false
         isTyping = true
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
@@ -37,6 +38,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
     }
     
     public func textViewDidEndEditing(_ textView: UITextView) {
+        
+        showAndHideFontSelector()
         guard lastTextViewTransform != nil && lastTextViewTransCenter != nil && lastTextViewFont != nil
             else {
                 return
@@ -48,6 +51,8 @@ extension PhotoEditorViewController: UITextViewDelegate {
                         textView.transform = self.lastTextViewTransform!
                         textView.center = self.lastTextViewTransCenter!
         }, completion: nil)
+        
+        //showAndHideFontSelector()
     }
     
 }

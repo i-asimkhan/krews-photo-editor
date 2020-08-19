@@ -19,6 +19,7 @@ public final class PhotoEditorViewController: UIViewController {
     
     // To hold the image
     @IBOutlet var imageView: UIImageView!
+    
     // To hold the drawings and stickers
     @IBOutlet weak var canvasImageView: UIImageView!
     
@@ -48,6 +49,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var clearButton: UIButton!
+    @IBOutlet weak var btnChangeFont: UIButton!
     
     //Video Container
     @IBOutlet weak var videoContainerView: UIView!

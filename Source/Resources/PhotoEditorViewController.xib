@@ -18,6 +18,7 @@
                 <outlet property="avPlayerView" destination="c9q-JU-njx" id="OuE-IA-jav"/>
                 <outlet property="bottomGradient" destination="ZGa-1B-gkO" id="U8W-LG-byh"/>
                 <outlet property="bottomToolbar" destination="87h-1G-t5q" id="Pzi-Dw-qOq"/>
+                <outlet property="btnChangeFont" destination="O2u-rz-NHR" id="d95-Xi-fKi"/>
                 <outlet property="cancelButton" destination="D13-EC-wSD" id="oPN-wq-KBU"/>
                 <outlet property="canvasImageView" destination="n3p-yR-4xc" id="OED-1L-YMz"/>
                 <outlet property="canvasView" destination="S1Y-ZS-dct" id="p6I-kg-UUU"/>
@@ -257,6 +258,22 @@
                         </view>
                     </subviews>
                 </stackView>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-rz-NHR" userLabel="Fonts">
+                    <rect key="frame" x="187" y="104" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="AeK-VQ-jWN"/>
+                        <constraint firstAttribute="width" constant="40" id="gMx-MZ-IK4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                    <state key="normal" title="T">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="didTapChangeFont:" destination="-1" eventType="touchUpInside" id="lnu-Rc-3Id"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-WN-eUP" userLabel="topViewRight">
                     <rect key="frame" x="362" y="44" width="40" height="265"/>
                     <subviews>
@@ -499,6 +516,7 @@
                 <constraint firstItem="Ado-XD-RVV" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="Dvm-M3-NUI"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" id="Fj6-PW-wbF"/>
                 <constraint firstAttribute="trailing" secondItem="Di3-U9-tfr" secondAttribute="trailing" constant="12" id="GWm-Lh-kKM"/>
+                <constraint firstItem="O2u-rz-NHR" firstAttribute="centerX" secondItem="ymm-th-TTo" secondAttribute="centerX" id="HpS-Qb-Y0j"/>
                 <constraint firstAttribute="trailing" secondItem="1sR-WN-eUP" secondAttribute="trailing" constant="12" id="IuK-sf-G83"/>
                 <constraint firstItem="GNs-io-Hlq" firstAttribute="leading" secondItem="ymm-th-TTo" secondAttribute="leading" id="Iv9-cM-eJ2"/>
                 <constraint firstItem="c9q-JU-njx" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" id="MPN-oN-zFa"/>
@@ -516,6 +534,7 @@
                 <constraint firstAttribute="trailing" secondItem="Cy8-ap-fH9" secondAttribute="trailing" id="dlF-iN-Gjg"/>
                 <constraint firstItem="Ado-XD-RVV" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="e63-Xc-8vN"/>
                 <constraint firstItem="Lu4-vW-ULA" firstAttribute="centerX" secondItem="ymm-th-TTo" secondAttribute="centerX" id="fMo-AS-E7z"/>
+                <constraint firstItem="O2u-rz-NHR" firstAttribute="top" secondItem="GNs-io-Hlq" secondAttribute="bottom" id="gKw-bR-wLx"/>
                 <constraint firstItem="D2Z-oT-sEe" firstAttribute="leading" secondItem="ymm-th-TTo" secondAttribute="leading" constant="12" id="hxy-Wc-VSk"/>
                 <constraint firstAttribute="trailing" secondItem="S1Y-ZS-dct" secondAttribute="trailing" id="jwU-EC-jaR"/>
                 <constraint firstAttribute="trailing" secondItem="3gN-z6-Z9n" secondAttribute="trailing" id="kUF-Ti-QZj"/>
