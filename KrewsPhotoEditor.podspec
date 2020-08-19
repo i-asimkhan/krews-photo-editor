@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KrewsPhotoEditor'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'KrewsPhotoEditor is a customised photo editor.'
   s.social_media_url = 'https://twitter.com/i_am_asimkhan'
 
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   s.swift_versions = '5.0'
 
   s.source_files = "Source/**/*.{swift}"
-  s.resources = "Source/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resources = "Source/**/*.{png,jpeg,jpg,storyboard,xib,xcassets,ttf,nib}"
 
     # s.public_header_files = 'Pod/Classes/**/*.h'
     # s.frameworks = 'UIKit', 'MapKit'

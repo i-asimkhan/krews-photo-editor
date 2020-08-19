@@ -110,6 +110,8 @@ public final class PhotoEditorViewController: UIViewController {
         super.viewDidLoad()
         self.updateUI()
         
+        
+        imgShadeView.isHidden = true
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -173,11 +175,15 @@ public final class PhotoEditorViewController: UIViewController {
     }
     
     func hideToolbar(hide: Bool) {
-        topRightToolbar.isHidden = hide
-        topToolbar.isHidden = hide
-        topGradientView.isHidden = hide
-        bottomToolbar.isHidden = hide
-        bottomGradient.isHidden = hide
+        var hideViews = hide
+        if isTyping {
+            hideViews = true
+        }
+        topRightToolbar.isHidden = hideViews
+        topToolbar.isHidden = hideViews
+        topGradientView.isHidden = hideViews
+        bottomToolbar.isHidden = hideViews
+        bottomGradient.isHidden = hideViews
     }
     
     func getThumbnailImageFromVideoUrl(url: URL, completion: @escaping ((_ image: UIImage?)->Void)) {

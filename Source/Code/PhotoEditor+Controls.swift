@@ -113,6 +113,37 @@ extension PhotoEditorViewController {
         hideToolbar(hide: false)
         isDrawing = false
         showAndHideFontSelector()
+        
+        /*
+        if isTyping {
+            self.canvasImageView.subviews.forEach { (view) in
+                /*
+                if let txtView = view as? UITextView , txtView.gestureRecognizers?.isEmpty ?? false {
+                    self.addGestures(view: txtView)
+                }
+                */
+                
+                let gesture = view.gestureRecognizers?.first(where: { (gesture) -> Bool in
+                    if  ((gesture as? UIPanGestureRecognizer) == nil) || ((gesture as? UIPinchGestureRecognizer) == nil) || ((gesture as? UIRotationGestureRecognizer) == nil) {
+                        return false
+                    } else {
+                        return true
+                    }
+                })
+                
+                if gesture == nil {
+                    self.addGestures(view: view)
+                }
+                
+                
+                
+                
+            }
+            
+            
+            isTyping = false
+        }
+        */
     }
     
     @IBAction func editScreencancelButtonTapped(_ sender: UIButton) {

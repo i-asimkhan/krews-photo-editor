@@ -20,7 +20,7 @@ extension PhotoEditorViewController: UITextViewDelegate {
         }
     }
     public func textViewDidBeginEditing(_ textView: UITextView) {
-        self.btnChangeFont.isHidden = false
+        btnChangeFont.isHidden = false
         isTyping = true
         lastTextViewTransform =  textView.transform
         lastTextViewTransCenter = textView.center
