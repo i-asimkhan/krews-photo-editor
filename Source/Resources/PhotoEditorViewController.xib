@@ -105,11 +105,16 @@
                         <constraint firstItem="kcT-ec-w7M" firstAttribute="width" secondItem="c9q-JU-njx" secondAttribute="width" id="wV3-ex-sFz"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zH-cK-EV1" userLabel="Safe Area">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNs-io-Hlq" userLabel="topGradient View" customClass="GradientView" customModule="KrewsPhotoEditor" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="24" width="414" height="60"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="43" width="414" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="a5Y-CK-7Nx"/>
+                        <constraint firstAttribute="height" constant="80" id="bsc-tJ-0DM"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2Z-oT-sEe" userLabel="cancelButtonView">
@@ -375,14 +380,20 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGa-1B-gkO" userLabel="bottomGradient View" customClass="GradientView" customModule="KrewsPhotoEditor" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="802" width="414" height="80"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="0.0" y="783" width="414" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="OFW-hK-G1P"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
                     </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lho-BP-HdC" userLabel="Safe Area">
+                    <rect key="frame" x="0.0" y="862" width="414" height="34"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="87h-1G-t5q" userLabel="bottomView">
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
@@ -526,40 +537,48 @@
                 <constraint firstItem="Di3-U9-tfr" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-10" id="1pf-gm-hZL"/>
                 <constraint firstItem="Cy8-ap-fH9" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="24Z-2f-Tyk"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="2tC-2e-oA6"/>
-                <constraint firstItem="GNs-io-Hlq" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-20" id="3g0-IX-1gs"/>
                 <constraint firstItem="Cy8-ap-fH9" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="6eK-mF-0OL"/>
+                <constraint firstItem="lho-BP-HdC" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="6nq-lf-kFw"/>
                 <constraint firstItem="5rw-9v-ExQ" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" id="8Iv-Qj-NmT"/>
+                <constraint firstItem="0zH-cK-EV1" firstAttribute="top" secondItem="HPk-Bg-V0q" secondAttribute="top" id="8jP-u0-3dF"/>
                 <constraint firstItem="Lu4-vW-ULA" firstAttribute="centerY" secondItem="3MS-N5-3xY" secondAttribute="centerY" id="Dd5-Za-tKE"/>
                 <constraint firstItem="Ado-XD-RVV" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="Dvm-M3-NUI"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-10" id="Fj6-PW-wbF"/>
                 <constraint firstAttribute="trailing" secondItem="Di3-U9-tfr" secondAttribute="trailing" constant="10" id="GWm-Lh-kKM"/>
                 <constraint firstAttribute="trailing" secondItem="1sR-WN-eUP" secondAttribute="trailing" constant="10" id="IuK-sf-G83"/>
-                <constraint firstItem="GNs-io-Hlq" firstAttribute="leading" secondItem="ymm-th-TTo" secondAttribute="leading" id="Iv9-cM-eJ2"/>
                 <constraint firstItem="c9q-JU-njx" firstAttribute="height" secondItem="HPk-Bg-V0q" secondAttribute="height" id="MPN-oN-zFa"/>
+                <constraint firstItem="GNs-io-Hlq" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="MVh-b9-oBl"/>
+                <constraint firstAttribute="trailing" secondItem="0zH-cK-EV1" secondAttribute="trailing" id="PJB-E0-r3T"/>
                 <constraint firstAttribute="trailing" secondItem="Ado-XD-RVV" secondAttribute="trailing" id="PTu-um-EZR"/>
+                <constraint firstItem="ymm-th-TTo" firstAttribute="top" secondItem="0zH-cK-EV1" secondAttribute="bottom" id="R0M-zQ-zjr"/>
+                <constraint firstItem="GNs-io-Hlq" firstAttribute="top" secondItem="0zH-cK-EV1" secondAttribute="bottom" constant="-1.2" id="SHm-RA-yXf"/>
                 <constraint firstAttribute="trailing" secondItem="ZGa-1B-gkO" secondAttribute="trailing" id="SbH-L6-vj9"/>
                 <constraint firstItem="D2Z-oT-sEe" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-10" id="SqI-y7-dhO"/>
                 <constraint firstItem="yAt-sK-1nK" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="Viz-8c-pzk"/>
                 <constraint firstItem="Ado-XD-RVV" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="WIf-gP-egX"/>
                 <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="87h-1G-t5q" secondAttribute="bottom" id="XH4-oO-47L"/>
                 <constraint firstItem="ZGa-1B-gkO" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="YYk-Vg-obo"/>
-                <constraint firstItem="ymm-th-TTo" firstAttribute="trailing" secondItem="GNs-io-Hlq" secondAttribute="trailing" id="ZIS-UR-lf2"/>
+                <constraint firstAttribute="bottom" secondItem="lho-BP-HdC" secondAttribute="bottom" id="anF-Lo-Yze"/>
                 <constraint firstAttribute="trailing" secondItem="Cy8-ap-fH9" secondAttribute="trailing" id="dlF-iN-Gjg"/>
                 <constraint firstItem="Ado-XD-RVV" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="e63-Xc-8vN"/>
                 <constraint firstItem="Lu4-vW-ULA" firstAttribute="centerX" secondItem="ymm-th-TTo" secondAttribute="centerX" id="fMo-AS-E7z"/>
                 <constraint firstItem="D2Z-oT-sEe" firstAttribute="leading" secondItem="ymm-th-TTo" secondAttribute="leading" constant="10" id="hxy-Wc-VSk"/>
                 <constraint firstAttribute="trailing" secondItem="S1Y-ZS-dct" secondAttribute="trailing" id="jwU-EC-jaR"/>
+                <constraint firstAttribute="trailing" secondItem="GNs-io-Hlq" secondAttribute="trailing" id="kIj-sS-pGi"/>
                 <constraint firstAttribute="trailing" secondItem="87h-1G-t5q" secondAttribute="trailing" id="kaD-bR-ZZt"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerY" secondItem="HPk-Bg-V0q" secondAttribute="centerY" id="lCZ-Hj-EUs"/>
                 <constraint firstAttribute="bottom" secondItem="Cy8-ap-fH9" secondAttribute="bottom" id="mok-x4-xHA"/>
+                <constraint firstItem="lho-BP-HdC" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="bottom" id="oG9-1e-J8S"/>
                 <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="yAt-sK-1nK" secondAttribute="bottom" constant="12" id="of3-AC-FQE"/>
-                <constraint firstItem="ymm-th-TTo" firstAttribute="bottom" secondItem="ZGa-1B-gkO" secondAttribute="bottom" constant="-20" id="uXH-MJ-Z8t"/>
+                <constraint firstItem="0zH-cK-EV1" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" id="sqF-fG-Pmz"/>
                 <constraint firstItem="S1Y-ZS-dct" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="uyk-kx-vrC"/>
                 <constraint firstItem="1sR-WN-eUP" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-10" id="wd0-YL-CZB"/>
+                <constraint firstItem="lho-BP-HdC" firstAttribute="top" secondItem="ZGa-1B-gkO" secondAttribute="bottom" constant="-1.2" id="wrK-dw-G9m"/>
+                <constraint firstAttribute="trailing" secondItem="lho-BP-HdC" secondAttribute="trailing" id="z81-Yf-ltg"/>
                 <constraint firstItem="3MS-N5-3xY" firstAttribute="leading" secondItem="HPk-Bg-V0q" secondAttribute="leading" constant="10" id="zYw-cX-ezI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ymm-th-TTo"/>
-            <point key="canvasLocation" x="71.200000000000003" y="51.724137931034484"/>
+            <point key="canvasLocation" x="71.014492753623188" y="51.5625"/>
         </view>
     </objects>
     <resources>

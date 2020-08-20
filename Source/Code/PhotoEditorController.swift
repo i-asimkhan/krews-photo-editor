@@ -154,6 +154,17 @@ public final class PhotoEditorViewController: UIViewController {
         hideControls()
     }
     
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    public override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        return .default
+    }
+    
     public override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeVideo()

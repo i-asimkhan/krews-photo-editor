@@ -149,8 +149,10 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                         view.transform = view.transform.scaledBy(x: 1.2, y: 1.2)
         },
                        completion: { _ in
-                        UIView.animate(withDuration: 0.2) {
+                        
+                        UIView.animate(withDuration: 0.2, animations: {
                             view.transform  = previouTransform
+                        }) { (value) in
                         }
         })
     }

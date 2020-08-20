@@ -4,11 +4,12 @@
 //
 //  Created by Guilherme Moura on 2/25/16.
 //  Copyright © 2016 Reefactor, Inc. All rights reserved.
-// Credit https://github.com/sprint84/PhotoCropEditor
+//
 
 import UIKit
 
 public protocol CropViewControllerDelegate: class {
+    func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage)
     func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect)
     func cropViewControllerDidCancel(_ controller: CropViewController)
 }
@@ -84,28 +85,14 @@ open class CropViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        /*
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.toolbar.isTranslucent = false
-        
-        
-        let barButtonAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        
-        
-        let leftBtn = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(CropViewController.cancel(_:)))
-        leftBtn.setTitleTextAttributes(barButtonAttributes, for: .normal)
-        navigationItem.leftBarButtonItem = leftBtn
-        
-        let rightBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(CropViewController.done(_:)))
-        rightBtn.setTitleTextAttributes(barButtonAttributes, for: .normal)
-        navigationItem.rightBarButtonItem = rightBtn
-        
-        navigationController?.navigationBar.barTintColor = UIColor.darkGray
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(CropViewController.cancel(_:)))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(CropViewController.done(_:)))
         
         if self.toolbarItems == nil {
             let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
             let constrainButton = UIBarButtonItem(title: "Constrain", style: .plain, target: self, action: #selector(CropViewController.constrain(_:)))
-            constrainButton.tintColor = UIColor.white
             toolbarItems = [flexibleSpace, constrainButton, flexibleSpace]
         }
         
@@ -113,7 +100,6 @@ open class CropViewController: UIViewController {
         
         cropView?.image = image
         cropView?.rotationGestureRecognizer.isEnabled = rotationEnabled
-        */
     }
     
     open override func viewDidAppear(_ animated: Bool) {
@@ -148,6 +134,7 @@ open class CropViewController: UIViewController {
     
     @objc func done(_ sender: UIBarButtonItem) {
         if let image = cropView?.croppedImage {
+            delegate?.cropViewController(self, didFinishCroppingImage: image)
             guard let rotation = cropView?.rotation else {
                 return
             }
@@ -182,7 +169,7 @@ open class CropViewController: UIViewController {
         actionSheet.addAction(original)
         let square = UIAlertAction(title: "Square", style: .default) { [unowned self] action in
             let ratio: CGFloat = 1.0
-            //self.cropView?.cropAspectRatio = ratio
+//            self.cropView?.cropAspectRatio = ratio
             if var cropRect = self.cropView?.cropRect {
                 let width = cropRect.width
                 cropRect.size = CGSize(width: width, height: width * ratio)
@@ -232,10 +219,6 @@ open class CropViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
         actionSheet.addAction(cancel)
-        
-        if let popoverController = actionSheet.popoverPresentationController {
-            popoverController.barButtonItem = sender
-        }
         
         present(actionSheet, animated: true, completion: nil)
     }

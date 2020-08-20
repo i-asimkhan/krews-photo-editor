@@ -4,7 +4,7 @@
 //
 //  Created by Guilherme Moura on 2/25/16.
 //  Copyright © 2016 Reefactor, Inc. All rights reserved.
-// Credit https://github.com/sprint84/PhotoCropEditor
+//
 
 import UIKit
 import AVFoundation
@@ -226,7 +226,7 @@ open class CropView: UIView, UIScrollViewDelegate, UIGestureRecognizerDelegate, 
     open func setRotationAngle(_ rotationAngle: CGFloat, snap: Bool) {
         var rotation = rotationAngle
         if snap {
-            rotation = nearbyint(rotationAngle / CGFloat(Double.pi/2)) * CGFloat(Double.pi/2)
+            rotation = nearbyint(rotationAngle / CGFloat(M_PI_2)) * CGFloat(M_PI_2)
         }
         self.rotationAngle = rotation
     }

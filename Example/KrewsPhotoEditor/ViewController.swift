@@ -26,6 +26,25 @@ class ViewController: UIViewController {
         picker.allowsEditing = true
         present(picker, animated: true, completion: nil)
     }
+    
+     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        
+        /*
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            // Fallback on earlier versions
+        }
+        */
+        return .default
+    }
 }
 
 extension ViewController: PhotoEditorDelegate {
