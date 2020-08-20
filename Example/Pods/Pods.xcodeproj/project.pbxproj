@@ -145,6 +145,7 @@
 		A134C41524ED415F00D2A504 /* third_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A134C40C24ED415F00D2A504 /* third_box@2x.png */; };
 		A134C41624ED415F00D2A504 /* first_box.png in Resources */ = {isa = PBXBuildFile; fileRef = A134C40D24ED415F00D2A504 /* first_box.png */; };
 		A134C41924ED4C8200D2A504 /* UIImageView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134C41824ED4C8200D2A504 /* UIImageView+Color.swift */; };
+		A142A69924EE66BA006F1F4E /* PhotoEditor+VideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A142A69824EE66BA006F1F4E /* PhotoEditor+VideoPlayer.swift */; };
 		A15ED7E924E9D90200533624 /* PhotoEditor+StickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ED7C624E9D90000533624 /* PhotoEditor+StickersViewController.swift */; };
 		A15ED7EA24E9D90200533624 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A15ED7C724E9D90000533624 /* ColorCollectionViewCell.xib */; };
 		A15ED7EB24E9D90200533624 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15ED7C824E9D90000533624 /* GradientView.swift */; };
@@ -473,6 +474,7 @@
 		A134C40C24ED415F00D2A504 /* third_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third_box@2x.png"; sourceTree = "<group>"; };
 		A134C40D24ED415F00D2A504 /* first_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first_box.png; sourceTree = "<group>"; };
 		A134C41824ED4C8200D2A504 /* UIImageView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Color.swift"; sourceTree = "<group>"; };
+		A142A69824EE66BA006F1F4E /* PhotoEditor+VideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PhotoEditor+VideoPlayer.swift"; sourceTree = "<group>"; };
 		A15ED7C624E9D90000533624 /* PhotoEditor+StickersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PhotoEditor+StickersViewController.swift"; sourceTree = "<group>"; };
 		A15ED7C724E9D90000533624 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		A15ED7C824E9D90000533624 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -946,6 +948,7 @@
 				A15ED7E224E9D90200533624 /* EmojiCollectionViewCell.swift */,
 				A15ED7D524E9D90100533624 /* ColorCollectionViewCell.swift */,
 				A134BA6324EDCE3F007BCBD7 /* PhotoEditorController.swift */,
+				A142A69824EE66BA006F1F4E /* PhotoEditor+VideoPlayer.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -1549,6 +1552,7 @@
 				A15ED7F124E9D90200533624 /* PhotoEditor+Controls.swift in Sources */,
 				A15ED7FB24E9D90200533624 /* StickerCollectionViewCell.swift in Sources */,
 				A15ED7F324E9D90200533624 /* ResizeControl.swift in Sources */,
+				A142A69924EE66BA006F1F4E /* PhotoEditor+VideoPlayer.swift in Sources */,
 				A15ED7FE24E9D90200533624 /* UIImage+Size.swift in Sources */,
 				A15ED80524E9D90200533624 /* EmojiCollectionViewCell.swift in Sources */,
 				A15ED7E924E9D90200533624 /* PhotoEditor+StickersViewController.swift in Sources */,

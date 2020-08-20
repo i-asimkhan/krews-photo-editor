@@ -15,16 +15,20 @@ public enum control {
     case sticker
     case draw
     case text
+    case stack
+    case font
     case save
     case share
     case clear
+    case cancel
+    case send
 }
 
 struct COLORS {
 
     static let color1 : UIColor = UIColor(red: 46/255, green: 104/255, blue: 135/255, alpha: 1)
-    static let color2 : UIColor = UIColor(red: 79/255, green: 174/255, blue: 174/255, alpha: 1)
-    static let color3 : UIColor = UIColor(red: 92/255, green: 166/255, blue: 197/255, alpha: 1)
+    static let color2 : UIColor = UIColor(red: 0/255, green: 176/255, blue: 175/255, alpha: 1)
+    static let color3 : UIColor = UIColor(red: 62/255, green: 168/255, blue: 201/255, alpha: 1)
 }
 
 extension PhotoEditorViewController {
@@ -58,7 +62,6 @@ extension PhotoEditorViewController {
             self.shadeColorBtn3.isHidden = true
             
             self.imageView.image = self.image ?? UIImage()
-            self.imgShadeView.isHidden = true
         } else {
             
             self.shadeColorBtn1.isHidden = false
@@ -66,7 +69,6 @@ extension PhotoEditorViewController {
             self.shadeColorBtn3.isHidden = false
             
             self.imageView.setImageColor(color: COLORS.color1.withAlphaComponent(0.75))
-            self.imgShadeView.isHidden = true
             self.shadeColorBtn1.isSelected = true
         }
         
@@ -184,8 +186,14 @@ extension PhotoEditorViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: Any) {
-        let img = self.canvasView.toImage()
-        photoEditorDelegate?.doneEditing(image: img)
+        
+        if  let url = self.video {
+            self.photoEditorDelegate?.doneEditing(video: url)
+        } else {
+            let img = self.canvasView.toImage()
+            photoEditorDelegate?.doneEditing(image: img)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -201,20 +209,28 @@ extension PhotoEditorViewController {
         for control in hiddenControls {
             switch control {
                 
-            case .clear:
-                clearBtn.isHidden = true
-            case .crop:
-                cropBtn.isHidden = true
-            case .draw:
-                drawBtn.isHidden = true
-            case .save:
-                saveBtn.isHidden = true
-            case .share:
-                shareBtn.isHidden = true
-            case .sticker:
-                stickerBtn.isHidden = true
-            case .text:
-                stickerBtn.isHidden = true
+                case .clear:
+                    clearBtn.isHidden = true
+                case .crop:
+                    cropBtn.isHidden = true
+                case .draw:
+                    drawBtn.isHidden = true
+                case .save:
+                    saveBtn.isHidden = true
+                case .share:
+                    shareBtn.isHidden = true
+                case .sticker:
+                    stickerBtn.isHidden = true
+                case .text:
+                    textBtn.isHidden = true
+                case .stack:
+                    stackBtn.isHidden = true
+                case .font:
+                    fontChangeBtn.isHidden = true
+                case .cancel:
+                    topToolbar.isHidden = true
+                case .send:
+                    sendView.isHidden = true
             }
         }
     }

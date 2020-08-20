@@ -20,9 +20,9 @@ Copyright (c) 2020   Dev Shanghai
 */
 
 import UIKit
+import AVKit
 import AVFoundation
 import Foundation
-
 
 public final class PhotoEditorViewController: UIViewController {
     
@@ -50,6 +50,7 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var sendView: UIView!
     @IBOutlet weak var colorsCollectionView: UICollectionView!
     @IBOutlet weak var colorPickerView: UIView!
     @IBOutlet weak var colorPickerViewBottomConstraint: NSLayoutConstraint!
@@ -66,17 +67,20 @@ public final class PhotoEditorViewController: UIViewController {
     @IBOutlet weak var shareBtn: UIButton!
     
     
-    //Video Container
+    // Video Container
     @IBOutlet weak var videoContainerView: UIView!
     @IBOutlet weak var avPlayerView: UIView!
     @IBOutlet weak var videoThumbnailImageView: UIImageView!
     
-    // Shade image view
-    @IBOutlet weak var imgShadeView: UIView!
+    // Shading images
     @IBOutlet weak var shadeColorBtn1: UIButton!
     @IBOutlet weak var shadeColorBtn2: UIButton!
     @IBOutlet weak var shadeColorBtn3: UIButton!
     
+    
+    // Video Player
+    let avPlayerViewController = AVPlayerViewController()
+    var avPlayer:AVPlayer?
     
     
     
@@ -110,6 +114,7 @@ public final class PhotoEditorViewController: UIViewController {
     var activeTextView: UITextView?
     var imageViewToPan: UIImageView?
     var isTyping: Bool = false
+    var isVideoPlaying = false
     
     
     var stickersViewController: StickersViewController!
@@ -126,7 +131,6 @@ public final class PhotoEditorViewController: UIViewController {
         self.updateUI()
         
         
-        imgShadeView.isHidden = true
         deleteView.layer.cornerRadius = deleteView.bounds.height / 2
         deleteView.layer.borderWidth = 2.0
         deleteView.layer.borderColor = UIColor.white.cgColor
@@ -148,6 +152,11 @@ public final class PhotoEditorViewController: UIViewController {
         configureCollectionView()
         stickersViewController = StickersViewController(nibName: "StickersViewController", bundle: Bundle(for: StickersViewController.self))
         hideControls()
+    }
+    
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeVideo()
     }
     
     func configureCollectionView() {
@@ -185,6 +194,13 @@ public final class PhotoEditorViewController: UIViewController {
             self.getThumbnailImageFromVideoUrl(url:video, completion: { (image) in
                 self.videoThumbnailImageView.image = image ?? UIImage()
             })
+            
+            
+            self.hiddenControls = [.clear, .crop, .draw, .save, .share, .sticker, .text, .stack, .font,]
+            self.hideControls()
+            self.topGradientView.isHidden = true
+            self.bottomGradient.isHidden = true
+            self.prepareVideoView(url: video)
         }
         
     }
@@ -233,6 +249,8 @@ extension PhotoEditorViewController: ColorDelegate {
         }
     }
 }
+
+
 
 
 
