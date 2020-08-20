@@ -110,7 +110,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNs-io-Hlq" userLabel="topGradient View" customClass="GradientView" customModule="KrewsPhotoEditor" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="43" width="414" height="80"/>
+                    <rect key="frame" x="0.0" y="24" width="414" height="80"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -551,7 +551,7 @@
                 <constraint firstAttribute="trailing" secondItem="0zH-cK-EV1" secondAttribute="trailing" id="PJB-E0-r3T"/>
                 <constraint firstAttribute="trailing" secondItem="Ado-XD-RVV" secondAttribute="trailing" id="PTu-um-EZR"/>
                 <constraint firstItem="ymm-th-TTo" firstAttribute="top" secondItem="0zH-cK-EV1" secondAttribute="bottom" id="R0M-zQ-zjr"/>
-                <constraint firstItem="GNs-io-Hlq" firstAttribute="top" secondItem="0zH-cK-EV1" secondAttribute="bottom" constant="-1.2" id="SHm-RA-yXf"/>
+                <constraint firstItem="GNs-io-Hlq" firstAttribute="top" secondItem="0zH-cK-EV1" secondAttribute="bottom" constant="-20" id="SHm-RA-yXf"/>
                 <constraint firstAttribute="trailing" secondItem="ZGa-1B-gkO" secondAttribute="trailing" id="SbH-L6-vj9"/>
                 <constraint firstItem="D2Z-oT-sEe" firstAttribute="top" secondItem="ymm-th-TTo" secondAttribute="top" constant="-10" id="SqI-y7-dhO"/>
                 <constraint firstItem="yAt-sK-1nK" firstAttribute="centerX" secondItem="HPk-Bg-V0q" secondAttribute="centerX" id="Viz-8c-pzk"/>

@@ -153,6 +153,12 @@ extension PhotoEditorViewController : UIGestureRecognizerDelegate  {
                         UIView.animate(withDuration: 0.2, animations: {
                             view.transform  = previouTransform
                         }) { (value) in
+                            
+                            if view.isFirstResponder == false {
+                                view.becomeFirstResponder()
+                                self.hideControls()
+                            }
+                            
                         }
         })
     }
