@@ -32,3 +32,4 @@ iamasimkhanjadoon@gmail.com.
 KrewsPhotoEditor is available under the MIT license. See the LICENSE file for more info.
 
 ## Advanced
+We will add more advance options here.
